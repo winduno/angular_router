@@ -21,12 +21,8 @@ export class UpdateProductComponent implements OnInit {
 
   // @ts-ignore
   id: number;
-  product: Product = {
-    id: this.productForm.value.id,
-    name: this.productForm.value.name,
-    price: this.productForm.value.price,
-    description: this.productForm.value.description
-  };
+  product: Product = {};
+  message = '';
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute) {
@@ -58,5 +54,6 @@ export class UpdateProductComponent implements OnInit {
     }, () => {
       console.log('Lỗi cụ nó rồi');
     });
+    this.message = 'Sửa thành công'
   }
 }

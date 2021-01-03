@@ -1,21 +1,17 @@
 <h1>Sửa sản phẩm</h1>
 <form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
   <table>
-    <tr class="form-group">
-      <td>ID:</td>
-      <td><input type="text" formControlName="id" class="form-control"></td>
-    </tr>
     <tr>
       <td>Name:</td>
-      <td><input type="text" formControlName="name" class="form-control"></td>
+      <td><input type="text" formControlName="name" class="form-control" [(ngModel)]="product.name"></td>
     </tr>
     <tr>
       <td>Price:</td>
-      <td><input type="text" formControlName="price" class="form-control"></td>
+      <td><input type="text" formControlName="price" class="form-control" [(ngModel)]="product.price"></td>
     </tr>
     <tr>
       <td>Description:</td>
-      <td><input type="text" formControlName="description" class="form-control"></td>
+      <td><input type="text" formControlName="description" class="form-control" [(ngModel)]="product.description"></td>
     </tr>
     <tr>
       <td></td>
@@ -25,3 +21,5 @@
     </tr>
   </table>
 </form>
+
+<p *ngIf="message != ''" class="text-success">{{message}}</p>
