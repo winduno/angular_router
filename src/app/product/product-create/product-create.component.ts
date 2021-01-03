@@ -29,7 +29,11 @@ export class ProductCreateComponent implements OnInit {
       price: this.productForm.value.price,
       description: this.productForm.value.description
     };
-    this.productService.addNewProduct(product);
+    this.productService.addNewProduct(product).subscribe(() => {
+      console.log('Thành công!!');
+    }, () => {
+      console.log('Lỗi cụ nó rồi');
+    });
     this.productForm.reset();
   }
 }

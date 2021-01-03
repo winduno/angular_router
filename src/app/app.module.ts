@@ -8,6 +8,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProductCreateComponent} from './product/product-create/product-create.component';
 import {ListProductComponent} from './product/list-product/list-product.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {HttpClientModule} from '@angular/common/http';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     HomeComponent,
     ProductCreateComponent,
     ListProductComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
